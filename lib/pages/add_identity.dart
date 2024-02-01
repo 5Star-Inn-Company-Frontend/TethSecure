@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:tethsecure/pages/customer_type.dart';
 
 class AddIdentity extends StatelessWidget {
   const AddIdentity({super.key});
@@ -90,7 +93,12 @@ class AddIdentity extends StatelessWidget {
                           borderRadius: BorderRadius.circular(35),
                         )
                       ),
-                      onPressed: (){},
+                      onPressed: (){
+                        Timer(
+                          const Duration(seconds: 2),
+                          () => Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (context) => const CustomerType())));
+                      },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -98,7 +106,7 @@ class AddIdentity extends StatelessWidget {
                           Image.asset(
                             'assets/check_mark.png'
                           ),
-                          SizedBox(width: 40,),
+                          const SizedBox(width: 40,),
                           const Text(
                             'ADD IDENTITY',
                             style: TextStyle(
@@ -114,7 +122,7 @@ class AddIdentity extends StatelessWidget {
 
                   const Row(
                     children: [
-                      const SizedBox(width: 150,),
+                      SizedBox(width: 150,),
                       Text(
                         'Click verify to proceed',
                         style: TextStyle(
