@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tethsecure/pages/security_screen.dart';
 
 class CustomerType extends StatefulWidget {
   const CustomerType({super.key});
@@ -56,7 +57,14 @@ class _CustomerTypeState extends State<CustomerType> {
                             borderRadius: BorderRadius.circular(35),
                           )
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SecurityScreen()
+                            )
+                          );
+                        },
                         child: const Text(
                           'Activate Token',
                           style: TextStyle(
@@ -79,7 +87,14 @@ class _CustomerTypeState extends State<CustomerType> {
                             borderRadius: BorderRadius.circular(35),
                           )
                         ),
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const SecurityScreen()
+                            )
+                          );
+                        },
                         child: const Text(
                           'Send SMS',
                           style: TextStyle(

@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:tethsecure/pages/token_page.dart';
+import 'package:tethsecure/pages/token_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
