@@ -12,14 +12,14 @@ class ButtonComp extends StatelessWidget {
       width: 301,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
+          padding: const EdgeInsets.only(left: 1),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(35),
           )
         ),
         onPressed: onPressed,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Text(
               text,
@@ -29,6 +29,7 @@ class ButtonComp extends StatelessWidget {
                 fontWeight: FontWeight.w400
               ),
             ),
+            const SizedBox(width: 70,),
             const Icon(Icons.arrow_right, size: 40, color: Colors.black,)
           ],
         )
