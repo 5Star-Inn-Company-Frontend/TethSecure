@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:tethsecure/components/drawer.dart';
 
 class SecurityScreen extends StatefulWidget {
   const SecurityScreen({super.key});
@@ -15,7 +16,7 @@ class _SecurityScreenState extends State<SecurityScreen> {
   void copy(){
     Clipboard.setData(ClipboardData(text: securityCode)).then((_) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Copied to your clipboard !'))
+        const SnackBar(content: Text('Copied to your clipboard!'))
       );
     }
     );
@@ -25,7 +26,7 @@ class _SecurityScreenState extends State<SecurityScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Image.asset('assets/menu.png'),
+        // leading: Image.asset('assets/menu.png'),
         title: const Text('TETHSECURE', style: TextStyle(fontSize: 16),),
         backgroundColor: const Color.fromRGBO(1, 28, 122, 1),
         foregroundColor: Colors.white,
@@ -38,6 +39,7 @@ class _SecurityScreenState extends State<SecurityScreen> {
           ),
         ],
       ),
+      drawer: const DrawerComp(),
       backgroundColor: const Color.fromRGBO(0, 8, 35, 1),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -48,7 +50,7 @@ class _SecurityScreenState extends State<SecurityScreen> {
                 child: SizedBox(
                   width: 300,
                   child: Table(
-                    border: TableBorder.all(width:2, color:Colors.white), //table border
+                    border: TableBorder.all(width:2, color: Colors.white), //table border
                     children:  [
                       const TableRow(
                         children: [
@@ -74,6 +76,30 @@ class _SecurityScreenState extends State<SecurityScreen> {
                   ),
                 ),
               ),
+
+              const SizedBox(height: 100,),
+              // const SizedBox(
+              //   height: 100,
+              //   width: 100,
+              //   child: CircularProgressIndicator(
+              //     strokeWidth: 15,
+              //   ),
+              // ),
+              const Text("25", textAlign: TextAlign.center, style: TextStyle(fontSize: 70 , fontWeight: FontWeight.w500, color: Colors.white),),
+
+              // const SizedBox(height: 5,),
+              const Text("LIFTTIME", textAlign: TextAlign.center, style: TextStyle(fontSize: 16 , fontWeight: FontWeight.w500, color: Colors.white),),
+
+              const SizedBox(height: 50,),
+              const Text("Serial Number: 0227489994", textAlign: TextAlign.center, style: TextStyle(fontSize: 16 , fontWeight: FontWeight.w500, color: Colors.white),),
+
+              const SizedBox(height: 180,),
+              const Row(
+                children: [
+                  SizedBox(width: 280,),
+                  Text("TETHSECURE", style: TextStyle(fontSize: 16 , fontWeight: FontWeight.w500, color: Colors.white),),
+                ],
+              )
             ],
           )
         ),

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:tethsecure/components/drawer.dart';
 import 'package:tethsecure/pages/customer_type.dart';
 
 class AddIdentity extends StatelessWidget {
@@ -10,11 +11,12 @@ class AddIdentity extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Image.asset('assets/menu.png'),
+        // leading: Image.asset('assets/menu.png'),
         title: const Text('TETHSECURE', style: TextStyle(fontSize: 16.0),),
         backgroundColor: const Color.fromRGBO(1, 28, 122, 1),
         foregroundColor: Colors.white,
       ),
+      drawer: const DrawerComp(),
       backgroundColor: const Color.fromRGBO(0, 8, 35, 1),
       body: SafeArea(
         child: Center(
